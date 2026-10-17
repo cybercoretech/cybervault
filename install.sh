@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Install CyberVault from the latest GitHub release.
 #
-#   curl -fsSL https://raw.githubusercontent.com/cybercore-tech/cybervault/main/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/cybercoretech/cybervault/main/install.sh | sh
 #
 # Supported: Linux (x86_64, aarch64) and macOS (x86_64, aarch64).
 set -eu
 
-REPO="cybercore-tech/cybervault"
+REPO="cybercoretech/cybervault"
 INSTALL_DIR="${CYBERVAULT_INSTALL_DIR:-$HOME/.local/bin}"
 
 die() {
@@ -75,4 +75,4 @@ case ":$PATH:" in
 esac
 echo "Run 'cybervault init' to create a vault, or 'cybervault --help' for more."
 echo "Optional: install Keysmith too for the TUI's generate-in-place feature —"
-echo "  curl -fsSL https://raw.githubusercontent.com/cybercore-tech/keysmith/main/install.sh | sh"
+echo "  curl -fsSL https://raw.githubusercontent.com/cybercoretech/keysmith/main/install.sh | sh"
