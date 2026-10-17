@@ -2,12 +2,12 @@
 
 # 🔐 CyberVault
 
-[![CI](https://github.com/cybercore-tech/cybervault/actions/workflows/ci.yml/badge.svg)](https://github.com/cybercore-tech/cybervault/actions/workflows/ci.yml)
-[![Release](https://github.com/cybercore-tech/cybervault/actions/workflows/release.yml/badge.svg)](https://github.com/cybercore-tech/cybervault/actions/workflows/release.yml)
+[![CI](https://github.com/cybercoretech/cybervault/actions/workflows/ci.yml/badge.svg)](https://github.com/cybercoretech/cybervault/actions/workflows/ci.yml)
+[![Release](https://github.com/cybercoretech/cybervault/actions/workflows/release.yml/badge.svg)](https://github.com/cybercoretech/cybervault/actions/workflows/release.yml)
 
 `Rust` · `Argon2id` · `ChaCha20-Poly1305`
 
-**[cybercore-tech.github.io/cybervault](https://cybercore-tech.github.io/cybervault/)** — install command, CLI/TUI walkthrough, threat model.
+**[cybercoretech.github.io/cybervault](https://cybercoretech.github.io/cybervault/)** — install command, CLI/TUI walkthrough, threat model.
 
 **Encrypted secrets vault.** Master-password unlock, one file, authenticated
 encryption — for storing generated passwords/passphrases (from
@@ -17,7 +17,7 @@ don't want sitting around in plaintext.
 ## 📦 Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/cybercore-tech/cybervault/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/cybercoretech/cybervault/main/install.sh | sh
 ```
 
 Downloads the latest release for your platform (Linux or macOS, x86_64
