@@ -423,9 +423,8 @@ dependencies = [
 
 [[package]]
 name = "cybercore"
-version = "0.5.0"
+version = "0.8.0"
 dependencies = [
- "anyhow",
  "chrono",
  "hostname",
  "serde",
