@@ -75,4 +75,4 @@ case ":$PATH:" in
 esac
 echo "Run 'cybervault init' to create a vault, or 'cybervault --help' for more."
 echo "Optional: install Keysmith too for the TUI's generate-in-place feature —"
-echo "  curl -fsSL https://raw.githubusercontent.com/darkstardevx/keysmith/main/install.sh | sh"
+echo "  curl -fsSL https://raw.githubusercontent.com/cybercoretech/keysmith/main/install.sh | sh"
