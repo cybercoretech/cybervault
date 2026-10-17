@@ -14,6 +14,7 @@ argon2 = "0.5"
 chacha20poly1305 = "0.10"
 rand = "0.8"
 rpassword = "7"
+zeroize = { version = "1", features = ["serde"] }
 cybercore = "0.4"
 ratatui = "0.30.2"
 crossterm = "0.29.0"
