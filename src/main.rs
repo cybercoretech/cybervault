@@ -20,11 +20,7 @@ use std::process::{Command, ExitCode};
 use vault::{Entry, VaultData};
 
 #[derive(Parser, Debug)]
-#[command(
-    name = "cybervault",
-    version,
-    about = "Encrypted secrets vault"
-)]
+#[command(name = "cybervault", version, about = "Encrypted secrets vault")]
 struct Args {
     /// Bare invocation (no subcommand) launches the interactive TUI.
     #[command(subcommand)]
