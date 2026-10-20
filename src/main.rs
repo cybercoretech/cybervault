@@ -22,7 +22,7 @@ use vault::{Entry, VaultData};
 #[derive(Parser, Debug)]
 #[command(
     name = "cybervault",
-    version = "0.1.0",
+    version,
     about = "Encrypted secrets vault"
 )]
 struct Args {
