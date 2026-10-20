@@ -1,9 +1,10 @@
 mod app;
+mod bridge;
 mod clipboard;
-mod crypto;
 mod keysmith_gen;
 mod ui;
-mod vault;
+
+use cybervault::vault;
 
 use clap::{Parser, Subcommand};
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyModifiers};
@@ -19,11 +20,7 @@ use std::process::{Command, ExitCode};
 use vault::{Entry, VaultData};
 
 #[derive(Parser, Debug)]
-#[command(
-    name = "cybervault",
-    version = "0.1.0",
-    about = "Encrypted secrets vault"
-)]
+#[command(name = "cybervault", version, about = "Encrypted secrets vault")]
 struct Args {
     /// Bare invocation (no subcommand) launches the interactive TUI.
     #[command(subcommand)]
@@ -65,6 +62,12 @@ enum Commands {
     List,
     /// Remove an entry.
     Remove { label: String },
+    /// Unlock the vault locally and expose a same-user, append-only socket for trusted integrations.
+    Bridge {
+        /// Unix socket path. Defaults to ~/.local/state/cybervault/cybervault.sock.
+        #[arg(long)]
+        socket: Option<PathBuf>,
+    },
 }
 
 fn default_vault_path() -> PathBuf {
@@ -482,6 +485,24 @@ fn main() -> ExitCode {
                 }
                 Err(e) => {
                     eprintln!("cybervault: failed to save vault: {e}");
+                    ExitCode::FAILURE
+                }
+            }
+        }
+
+        Commands::Bridge { socket } => {
+            let password = match read_master_password(false) {
+                Ok(p) => p,
+                Err(e) => {
+                    eprintln!("cybervault: {e}");
+                    return ExitCode::FAILURE;
+                }
+            };
+            let socket = socket.unwrap_or_else(bridge::default_socket_path);
+            match bridge::run(&path, &socket, password) {
+                Ok(()) => ExitCode::SUCCESS,
+                Err(e) => {
+                    eprintln!("cybervault: bridge: {e}");
                     ExitCode::FAILURE
                 }
             }

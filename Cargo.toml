@@ -1,19 +1,35 @@
 [package]
 name = "cybervault"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "Encrypted secrets vault — master-password unlock, Argon2id + ChaCha20-Poly1305"
 authors = ["darkstardevx <darkstardevx@gmail.com>"]
 license = "MIT"
 
+[lib]
+name = "cybervault"
+path = "src/lib.rs"
+
+[[bin]]
+name = "cybervault"
+path = "src/main.rs"
+required-features = ["cli"]
+
+[features]
+default = ["cli"]
+# The TUI/CLI front end. Library users (the CyberVault Android app) build
+# with default-features = false and get only the vault format + crypto.
+cli = ["dep:clap", "dep:rpassword", "dep:cybercore", "dep:ratatui", "dep:crossterm"]
+
 [dependencies]
-clap = { version = "4.5", features = ["derive"] }
+clap = { version = "4.5", features = ["derive"], optional = true }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 argon2 = "0.5"
 chacha20poly1305 = "0.10"
 rand = "0.8"
-rpassword = "7"
-cybercore = "0.4"
-ratatui = "0.30.2"
-crossterm = "0.29.0"
+rpassword = { version = "7", optional = true }
+zeroize = { version = "1", features = ["serde"] }
+cybercore = { version = "0.4", optional = true }
+ratatui = { version = "0.30.2", optional = true }
+crossterm = { version = "0.29.0", optional = true }

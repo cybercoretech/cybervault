@@ -11,7 +11,7 @@
 
 **Encrypted secrets vault.** Master-password unlock, one file, authenticated
 encryption — for storing generated passwords/passphrases (from
-[Keysmith](https://github.com/darkstardevx/keysmith)) or anything else you
+[Keysmith](https://github.com/cybercoretech/keysmith)) or anything else you
 don't want sitting around in plaintext.
 
 ## 📦 Install
@@ -24,7 +24,7 @@ Downloads the latest release for your platform (Linux or macOS, x86_64
 or aarch64), verifies its SHA-256 checksum, and installs `cybervault`
 to `~/.local/bin`. Or build from source with `cargo build --release`.
 
-Install [Keysmith](https://github.com/darkstardevx/keysmith) too if you
+Install [Keysmith](https://github.com/cybercoretech/keysmith) too if you
 want the TUI's Ctrl+G/Ctrl+P generate-in-place feature — the TUI shells
 out to `keysmith --raw` on `PATH`, so without it the rest of CyberVault
 works fine, generation-on-the-spot just isn't available.
@@ -56,14 +56,34 @@ cybervault add github --note "personal account"
 cybervault get github --copy             # copy to clipboard, don't print
 cybervault list                          # labels + dates + notes — never secrets
 cybervault remove github
+cybervault bridge                        # unlock for the local Holodrive integration
 ```
 
 Every **CLI** operation (`add`/`get`/`list`/`remove`) prompts for the
 master password fresh — no unlocked session sits around anywhere to be
 stolen. `add` reads the secret from stdin if it's piped — the path
-[Keysmith](https://github.com/darkstardevx/keysmith)'s `--save <label>`
+[Keysmith](https://github.com/cybercoretech/keysmith)'s `--save <label>`
 flag uses (`keysmith password --save github`) — otherwise prompts
 interactively with hidden input.
+
+### 🔌 Local integration bridge
+
+`cybervault bridge` prompts for the master password in the terminal, then
+serves a same-user Unix socket at
+`~/.local/state/cybervault/cybervault.sock`. It supports only a health check
+and adding a new labeled secret. It cannot unlock remotely, read/list secrets,
+overwrite an existing label, or remove entries. The socket and parent
+directory are restricted to the current OS user (`0600`/`0700`), and the
+foreground bridge exits after five minutes without a request. Press Ctrl+C to
+stop it sooner. HOLODRIVE never returns the stored value to the phone; it
+forwards a user-requested save over its authenticated session, and CyberVault
+encrypts it before writing the vault.
+
+The bridge is deliberately opt-in and local. It is not an HTTP listener and
+must not be exposed through a reverse proxy or a firewall. HOLODRIVE and
+CyberVault must run as the same OS user. See
+[`docs/integrations/holodrive-v1.md`](docs/integrations/holodrive-v1.md) for
+the local protocol and setup.
 
 ## 🖥️ TUI
 
@@ -88,7 +108,7 @@ q, Esc          quit
 
 While entering a new entry's **secret** during `a`, you can either type
 your own or generate one on the spot via
-[Keysmith](https://github.com/darkstardevx/keysmith):
+[Keysmith](https://github.com/cybercoretech/keysmith):
 
 ```
 ctrl+g          choose a length, then generate a password
