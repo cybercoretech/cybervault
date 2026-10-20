@@ -1,6 +1,6 @@
 [package]
 name = "cybervault"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "Encrypted secrets vault — master-password unlock, Argon2id + ChaCha20-Poly1305"
 authors = ["darkstardevx <darkstardevx@gmail.com>"]
