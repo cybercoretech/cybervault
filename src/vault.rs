@@ -4,12 +4,13 @@
 //! stored to re-derive the same key and decrypt later — only the
 //! ciphertext and the master password are.
 
-use crate::crypto::{self, KEY_LEN, NONCE_LEN, SALT_LEN};
+use crate::crypto::{self, NONCE_LEN, SALT_LEN};
 use rand::RngCore;
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
 use std::os::unix::fs::PermissionsExt;
 use std::path::Path;
+use zeroize::{Zeroize, Zeroizing};
 
 const MAGIC: &[u8; 4] = b"CVL1";
 
@@ -18,6 +19,14 @@ pub struct Entry {
     pub secret: String,
     pub created: String,
     pub note: Option<String>,
+}
+
+impl Drop for Entry {
+    fn drop(&mut self) {
+        self.secret.zeroize();
+        self.created.zeroize();
+        self.note.zeroize();
+    }
 }
 
 #[derive(Serialize, Deserialize, Default, Debug)]
@@ -34,8 +43,8 @@ fn random_bytes<const N: usize>() -> [u8; N] {
 pub fn save(path: &Path, password: &str, data: &VaultData) -> Result<(), String> {
     let salt: [u8; SALT_LEN] = random_bytes();
     let nonce: [u8; NONCE_LEN] = random_bytes();
-    let key = crypto::derive_key(password, &salt);
-    let plaintext = serde_json::to_vec(data).map_err(|e| e.to_string())?;
+    let key = Zeroizing::new(crypto::derive_key(password, &salt));
+    let plaintext = Zeroizing::new(serde_json::to_vec(data).map_err(|e| e.to_string())?);
     let ciphertext = crypto::encrypt(&key, &nonce, &plaintext);
 
     let mut out = Vec::with_capacity(4 + SALT_LEN + NONCE_LEN + ciphertext.len());
@@ -85,8 +94,8 @@ pub fn load(path: &Path, password: &str) -> Result<VaultData, String> {
         .expect("slice length matches NONCE_LEN by construction");
     let ciphertext = &raw[header_len..];
 
-    let key: [u8; KEY_LEN] = crypto::derive_key(password, salt);
-    let plaintext = crypto::decrypt(&key, &nonce, ciphertext)?;
+    let key = Zeroizing::new(crypto::derive_key(password, salt));
+    let plaintext = Zeroizing::new(crypto::decrypt(&key, &nonce, ciphertext)?);
     serde_json::from_slice(&plaintext)
         .map_err(|e| format!("vault decrypted but contents aren't valid: {e}"))
 }
