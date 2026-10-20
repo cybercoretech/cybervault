@@ -4,6 +4,10 @@ on:
   push:
     tags:
       - "v*"
+  # Push events don't trigger workflows in this repo since the 2026-10 org
+  # migration (a GitHub-side fault; CI got the same escape hatch). Release a
+  # tag by hand with:  gh workflow run Release --ref vX.Y.Z
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -14,6 +18,8 @@ env:
 jobs:
   build:
     name: Build (${{ matrix.target }})
+    # A manual run must point at a version tag, never a branch.
+    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
