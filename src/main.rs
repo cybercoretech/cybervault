@@ -1,10 +1,10 @@
 mod app;
 mod bridge;
 mod clipboard;
-mod crypto;
 mod keysmith_gen;
 mod ui;
-mod vault;
+
+use cybervault::vault;
 
 use clap::{Parser, Subcommand};
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyModifiers};
