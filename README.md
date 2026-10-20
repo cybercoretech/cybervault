@@ -11,7 +11,7 @@
 
 **Encrypted secrets vault.** Master-password unlock, one file, authenticated
 encryption — for storing generated passwords/passphrases (from
-[Keysmith](https://github.com/darkstardevx/keysmith)) or anything else you
+[Keysmith](https://github.com/cybercoretech/keysmith)) or anything else you
 don't want sitting around in plaintext.
 
 ## 📦 Install
@@ -24,7 +24,7 @@ Downloads the latest release for your platform (Linux or macOS, x86_64
 or aarch64), verifies its SHA-256 checksum, and installs `cybervault`
 to `~/.local/bin`. Or build from source with `cargo build --release`.
 
-Install [Keysmith](https://github.com/darkstardevx/keysmith) too if you
+Install [Keysmith](https://github.com/cybercoretech/keysmith) too if you
 want the TUI's Ctrl+G/Ctrl+P generate-in-place feature — the TUI shells
 out to `keysmith --raw` on `PATH`, so without it the rest of CyberVault
 works fine, generation-on-the-spot just isn't available.
@@ -62,7 +62,7 @@ cybervault bridge                        # unlock for the local Holodrive integr
 Every **CLI** operation (`add`/`get`/`list`/`remove`) prompts for the
 master password fresh — no unlocked session sits around anywhere to be
 stolen. `add` reads the secret from stdin if it's piped — the path
-[Keysmith](https://github.com/darkstardevx/keysmith)'s `--save <label>`
+[Keysmith](https://github.com/cybercoretech/keysmith)'s `--save <label>`
 flag uses (`keysmith password --save github`) — otherwise prompts
 interactively with hidden input.
 
@@ -108,7 +108,7 @@ q, Esc          quit
 
 While entering a new entry's **secret** during `a`, you can either type
 your own or generate one on the spot via
-[Keysmith](https://github.com/darkstardevx/keysmith):
+[Keysmith](https://github.com/cybercoretech/keysmith):
 
 ```
 ctrl+g          choose a length, then generate a password
