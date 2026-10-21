@@ -177,7 +177,7 @@
 </style>
 
 <div class="companion-banner">
-  Pairs with <a href="https://github.com/darkstardevx/keysmith" target="_blank" rel="noopener">Keysmith</a> — generate strong passwords/passphrases straight into the vault.
+  Pairs with <a href="https://github.com/cybercoretech/keysmith" target="_blank" rel="noopener">Keysmith</a> — generate strong passwords/passphrases straight into the vault.
 </div>
 
 <nav>
@@ -190,7 +190,7 @@
       <a class="navlink" href="#cli">CLI</a>
       <a class="navlink" href="#tui">TUI</a>
       <a class="navlink" href="#install">Install</a>
-      <a class="navlink btn btn-ghost" style="padding:7px 15px;font-size:12.5px;" href="https://github.com/darkstardevx/cybervault" target="_blank" rel="noopener">GitHub</a>
+      <a class="navlink btn btn-ghost" style="padding:7px 15px;font-size:12.5px;" href="https://github.com/cybercoretech/cybervault" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </nav>
@@ -314,7 +314,7 @@
       </div>
       <div class="cmd-row">
         <span class="prompt">&gt;_</span>
-        <code id="cv-cmd" class="mono">curl -fsSL https://raw.githubusercontent.com/darkstardevx/cybervault/main/install.sh | sh</code>
+        <code id="cv-cmd" class="mono">curl -fsSL https://raw.githubusercontent.com/cybercoretech/cybervault/main/install.sh | sh</code>
         <button class="copy-btn" onclick="cvCopy(this)" aria-label="Copy command">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         </button>
@@ -324,13 +324,13 @@
         <p>Want generate-in-place in the TUI too?</p>
         <div class="cmd-row" style="margin:0;">
           <span class="prompt">&gt;_</span>
-          <code class="mono">curl -fsSL https://raw.githubusercontent.com/darkstardevx/keysmith/main/install.sh | sh</code>
+          <code class="mono">curl -fsSL https://raw.githubusercontent.com/cybercoretech/keysmith/main/install.sh | sh</code>
         </div>
       </div>
     </div>
     <p class="dl-count" id="dl-count">&hellip;</p>
     <div class="install-more">
-      <a href="https://github.com/darkstardevx/cybervault#-commands" target="_blank" rel="noopener">More install options &amp; manual builds →</a>
+      <a href="https://github.com/cybercoretech/cybervault#-commands" target="_blank" rel="noopener">More install options &amp; manual builds →</a>
     </div>
   </div>
 </section>
@@ -345,8 +345,8 @@
       <span>CyberVault &middot; MIT licensed &middot; pairs with Keysmith</span>
     </div>
     <div class="foot-links">
-      <a href="https://github.com/darkstardevx/cybervault" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://github.com/darkstardevx/keysmith" target="_blank" rel="noopener">Keysmith</a>
+      <a href="https://github.com/cybercoretech/cybervault" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/cybercoretech/keysmith" target="_blank" rel="noopener">Keysmith</a>
       <a href="#install">Install</a>
     </div>
     <div class="foot-family">Cybercore family</div>
@@ -355,8 +355,8 @@
 
 <script>
   const CMDS = {
-    linux: 'curl -fsSL https://raw.githubusercontent.com/darkstardevx/cybervault/main/install.sh | sh',
-    macos: 'curl -fsSL https://raw.githubusercontent.com/darkstardevx/cybervault/main/install.sh | sh'
+    linux: 'curl -fsSL https://raw.githubusercontent.com/cybercoretech/cybervault/main/install.sh | sh',
+    macos: 'curl -fsSL https://raw.githubusercontent.com/cybercoretech/cybervault/main/install.sh | sh'
   };
   function cvSetOs(os) {
     document.querySelectorAll('.os-tab').forEach(t => t.classList.toggle('active', t.dataset.os === os));
@@ -371,7 +371,7 @@
   }
   try { if (/Mac OS X|Macintosh/.test(navigator.userAgent)) cvSetOs('macos'); } catch (e) {}
 
-  fetch('https://api.github.com/repos/darkstardevx/cybervault/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+  fetch('https://api.github.com/repos/cybercoretech/cybervault/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(rel => {
       const dl = (rel.assets || [])
