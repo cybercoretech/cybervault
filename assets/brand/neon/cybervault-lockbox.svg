@@ -2,33 +2,58 @@
   <title id="title">CyberVault hardened vault door</title>
   <desc id="desc">A dimensional steel vault door with neon circuit traces, locking rings, bolts, and a protected key core.</desc>
   <defs>
-    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#263443"/><stop offset=".35" stop-color="#0d141d"/><stop offset=".7" stop-color="#1c2a38"/><stop offset="1" stop-color="#070b11"/></linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8796a3"/><stop offset=".08" stop-color="#263443"/><stop offset=".32" stop-color="#0d141d"/><stop offset=".57" stop-color="#354756"/><stop offset=".72" stop-color="#111b25"/><stop offset=".92" stop-color="#536574"/><stop offset="1" stop-color="#070b11"/></linearGradient>
+    <linearGradient id="steelEdge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b9c7d1"/><stop offset=".16" stop-color="#3a4b5b"/><stop offset=".5" stop-color="#111923"/><stop offset=".84" stop-color="#8293a1"/><stop offset="1" stop-color="#1b2733"/></linearGradient>
+    <linearGradient id="darkSteel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#3b4b59"/><stop offset=".18" stop-color="#101923"/><stop offset=".8" stop-color="#070b11"/><stop offset="1" stop-color="#526370"/></linearGradient>
     <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2ee6f6"/><stop offset=".43" stop-color="#9b6bff"/><stop offset="1" stop-color="#ff2e97"/></linearGradient>
     <radialGradient id="core"><stop stop-color="#6ee7a8" stop-opacity=".9"/><stop offset=".35" stop-color="#2ee6f6" stop-opacity=".35"/><stop offset="1" stop-color="#07090e" stop-opacity="0"/></radialGradient>
-    <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="11" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <filter id="soft"><feGaussianBlur stdDeviation="26"/></filter>
-    <pattern id="mesh" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#2ee6f6" stroke-opacity=".13"/></pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur in="SourceAlpha" stdDeviation="14"/><feOffset dx="0" dy="18" result="off"/><feFlood flood-color="#000" flood-opacity=".8"/><feComposite in2="off" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".42" numOctaves="2" seed="8" result="noise"/><feColorMatrix in="noise" type="saturate" values="0" result="mono"/><feComponentTransfer in="mono"><feFuncA type="table" tableValues="0 .12"/></feComponentTransfer><feBlend in="SourceGraphic" in2="mono" mode="soft-light"/></filter>
+    <pattern id="mesh" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#2ee6f6" stroke-opacity=".1"/></pattern>
+    <pattern id="brush" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M0 2h13M0 8h13" stroke="#d9e6ed" stroke-opacity=".08"/><path d="M0 5h13M0 11h13" stroke="#000" stroke-opacity=".1"/></pattern>
   </defs>
   <rect width="900" height="900" fill="#07090e"/>
   <ellipse cx="460" cy="450" rx="335" ry="350" fill="#2ee6f6" opacity=".08" filter="url(#soft)"/>
-  <path d="M150 158 690 100 780 170v530L690 800l-540-56z" fill="#0a1018" stroke="#3a4656" stroke-width="4"/>
-  <path d="M188 180 662 130l74 58v464l-74 83-474-48z" fill="url(#steel)" stroke="url(#rim)" stroke-width="7"/>
-  <path d="M188 180 662 130l74 58M188 180v507M662 130v605" fill="none" stroke="#e9f1f7" stroke-opacity=".18" stroke-width="3"/>
-  <path d="M208 204 646 158l66 48v418l-66 72-438-45z" fill="url(#mesh)" opacity=".8"/>
-  <g filter="url(#bloom)" fill="#ffb347" stroke="#07090e" stroke-width="4">
+  <g filter="url(#shadow)">
+    <path d="M150 158 690 100 780 170v530L690 800l-540-56z" fill="#0a1018" stroke="#3a4656" stroke-width="4"/>
+    <path d="M174 165 676 112l82 62v510l-82 93-512-51z" fill="url(#steelEdge)" stroke="#101923" stroke-width="10"/>
+    <path d="M188 180 662 130l74 58v464l-74 83-474-48z" fill="url(#steel)" stroke="url(#rim)" stroke-width="6"/>
+    <path d="M188 180 662 130l74 58M188 180v507M662 130v605" fill="none" stroke="#e9f1f7" stroke-opacity=".28" stroke-width="3"/>
+    <path d="M208 204 646 158l66 48v418l-66 72-438-45z" fill="url(#brush)" opacity=".65"/>
+    <path d="M208 204 646 158l66 48v418l-66 72-438-45z" fill="url(#mesh)" opacity=".72"/>
+    <path d="M204 202 645 157l68 50" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="4"/>
+    <path d="M216 220 634 178" fill="none" stroke="#000" stroke-opacity=".55" stroke-width="5"/>
+  </g>
+  <g filter="url(#bloom)" fill="#ffb347" stroke="#07090e" stroke-width="5">
     <circle cx="236" cy="236" r="12"/><circle cx="682" cy="192" r="12"/><circle cx="236" cy="652" r="12"/><circle cx="682" cy="622" r="12"/>
   </g>
-  <g transform="translate(445 430)" filter="url(#bloom)">
-    <circle r="218" fill="#07090e" fill-opacity=".82" stroke="#2ee6f6" stroke-width="8"/>
-    <circle r="188" fill="none" stroke="#3a4656" stroke-width="18"/>
-    <circle r="188" fill="none" stroke="url(#rim)" stroke-width="5" stroke-dasharray="92 22 12 18"/>
-    <circle r="146" fill="none" stroke="#2ee6f6" stroke-opacity=".55" stroke-width="3" stroke-dasharray="3 17"/>
-    <circle r="115" fill="url(#core)" opacity=".8"/>
-    <circle r="92" fill="#101a24" stroke="#6ee7a8" stroke-width="7"/>
+  <g fill="#ffd58b" opacity=".8">
+    <circle cx="233" cy="233" r="3"/><circle cx="679" cy="189" r="3"/><circle cx="233" cy="649" r="3"/><circle cx="679" cy="619" r="3"/>
+  </g>
+  <g opacity=".48" fill="none" stroke="#d7e4eb" stroke-width="2">
+    <path d="M220 250 220 630"/><path d="M698 210v382"/>
+  </g>
+  <g transform="translate(445 430)" filter="url(#shadow)">
+    <circle r="226" fill="#05080d" fill-opacity=".9" stroke="#0a1119" stroke-width="18"/>
+    <circle r="218" fill="#07090e" stroke="#2ee6f6" stroke-width="6"/>
+    <circle r="205" fill="none" stroke="#9eabb5" stroke-opacity=".45" stroke-width="3"/>
+    <circle r="190" fill="none" stroke="#0b1119" stroke-width="20"/>
+    <circle r="180" fill="none" stroke="#768694" stroke-opacity=".56" stroke-width="4"/>
+    <circle r="188" fill="none" stroke="url(#rim)" stroke-width="4" stroke-dasharray="92 22 12 18"/>
+    <circle r="170" fill="none" stroke="#000" stroke-opacity=".7" stroke-width="8" stroke-dasharray="2 14"/>
+    <circle r="146" fill="none" stroke="#2ee6f6" stroke-opacity=".42" stroke-width="3" stroke-dasharray="3 17"/>
+    <circle r="124" fill="#080d13" stroke="#1f2d39" stroke-width="12"/>
+    <circle r="115" fill="url(#core)" opacity=".7"/>
+    <circle r="98" fill="url(#darkSteel)" stroke="#6ee7a8" stroke-width="5"/>
+    <ellipse cy="-78" rx="62" ry="10" fill="#fff" opacity=".08"/>
     <path d="M-34 10h68v62h-68z" fill="#07090e" stroke="#6ee7a8" stroke-width="6"/>
     <path d="M-27 10v-38a27 27 0 0 1 54 0v38" fill="none" stroke="#6ee7a8" stroke-width="7"/>
+    <path d="M-21 4v-32a21 21 0 0 1 42 0" fill="none" stroke="#d5ffe7" stroke-opacity=".5" stroke-width="3"/>
     <circle cy="37" r="8" fill="#6ee7a8"/>
     <path d="M0 45v16" stroke="#6ee7a8" stroke-width="5"/>
+    <path d="M-220 0h34M186 0h34M0-220v34M0 186v34" stroke="#e9f1f7" stroke-opacity=".5" stroke-width="3"/>
   </g>
   <g fill="none" stroke="#2ee6f6" stroke-width="3" opacity=".85">
     <path d="M210 320h74l38-38"/><path d="M654 310h-65l-42-42"/><path d="M208 545h72l42 42"/><path d="M674 540h-72l-35 35"/>
