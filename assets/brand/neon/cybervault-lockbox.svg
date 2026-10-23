@@ -25,8 +25,8 @@
     <circle r="146" fill="none" stroke="#2ee6f6" stroke-opacity=".55" stroke-width="3" stroke-dasharray="3 17"/>
     <circle r="115" fill="url(#core)" opacity=".8"/>
     <circle r="92" fill="#101a24" stroke="#6ee7a8" stroke-width="7"/>
-    <path d="M-30 10h60v58h-60z" fill="#07090e" stroke="#6ee7a8" stroke-width="6"/>
-    <path d="M-16 10v-30a36 36 0 0 1 72 0v30" fill="none" stroke="#6ee7a8" stroke-width="7"/>
+    <path d="M-34 10h68v62h-68z" fill="#07090e" stroke="#6ee7a8" stroke-width="6"/>
+    <path d="M-27 10v-38a27 27 0 0 1 54 0v38" fill="none" stroke="#6ee7a8" stroke-width="7"/>
     <circle cy="37" r="8" fill="#6ee7a8"/>
     <path d="M0 45v16" stroke="#6ee7a8" stroke-width="5"/>
   </g>
