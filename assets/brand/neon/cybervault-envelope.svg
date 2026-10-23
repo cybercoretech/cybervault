@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title">
+  <title id="title">CyberVault authenticated data envelope</title>
+  <defs><linearGradient id="e" x1="0" x2="1"><stop stop-color="#2ee6f6"/><stop offset="1" stop-color="#ff2e97"/></linearGradient></defs>
+  <rect width="640" height="480" fill="#07090e"/>
+  <rect x="76" y="92" width="488" height="296" rx="4" fill="#111821" stroke="url(#e)" stroke-width="7"/>
+  <path d="m82 112 238 190 238-190M82 368l168-150M558 368 390 218" fill="none" stroke="#2ee6f6" stroke-width="5"/>
+  <circle cx="320" cy="240" r="52" fill="#07090e" stroke="#6ee7a8" stroke-width="6"/>
+  <path d="m294 242 18 18 36-42" fill="none" stroke="#6ee7a8" stroke-width="9"/>
+</svg>

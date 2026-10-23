@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title">
+  <title id="title">CyberVault command line card</title>
+  <rect width="900" height="520" fill="#07090e"/><rect x="30" y="30" width="840" height="460" fill="#111821" stroke="#3a4656" stroke-width="3"/>
+  <circle cx="62" cy="64" r="7" fill="#ff2e97"/><circle cx="88" cy="64" r="7" fill="#ffb347"/><circle cx="114" cy="64" r="7" fill="#6ee7a8"/>
+  <path d="M30 98h840" stroke="#3a4656" stroke-width="2"/>
+  <g font-family="monospace" font-size="24"><text x="66" y="160" fill="#7d8799">$ cybervault add github</text><text x="66" y="205" fill="#2ee6f6">Master password: ********</text><text x="66" y="250" fill="#2ee6f6">Secret: ********</text><text x="66" y="320" fill="#6ee7a8">saved "github" · authenticated</text><text x="66" y="390" fill="#7d8799">$ cybervault list</text><text x="66" y="435" fill="#ffb347">github      personal account</text></g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title">
+  <title id="title">CyberVault terminal user interface card</title>
+  <rect width="900" height="520" fill="#07090e"/><rect x="30" y="30" width="840" height="460" fill="#111821" stroke="#9b6bff" stroke-width="3"/>
+  <path d="M30 92h840" stroke="#3a4656" stroke-width="2"/><text x="60" y="72" fill="#2ee6f6" font-family="monospace" font-size="22">CYBERVAULT // TUI // SESSION MEMORY ONLY</text>
+  <g font-family="monospace" font-size="23"><text x="70" y="150" fill="#6ee7a8">● github</text><text x="70" y="195" fill="#7d8799">● aws-prod</text><text x="70" y="280" fill="#ff2e97">[a] add  [v] reveal  [c] copy</text><text x="70" y="350" fill="#ffb347">ctrl+g  generate password</text><text x="70" y="395" fill="#2ee6f6">entropy 155 bits // VERY STRONG</text></g>
+</svg>

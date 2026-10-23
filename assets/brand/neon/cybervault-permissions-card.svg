@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title">
+  <title id="title">CyberVault owner-only file permissions card</title>
+  <rect width="900" height="520" fill="#07090e"/><rect x="30" y="30" width="840" height="460" fill="#111821" stroke="#3a4656" stroke-width="3"/>
+  <g font-family="monospace"><text x="66" y="92" fill="#2ee6f6" font-size="22">PERMISSION AUDIT // EVERY WRITE</text><text x="66" y="172" fill="#7d8799" font-size="22">$ stat -c '%a %n' vault.cvlt</text><text x="66" y="244" fill="#6ee7a8" font-size="44">0700</text><text x="220" y="244" fill="#f3f6fa" font-size="22">vault directory</text><text x="66" y="330" fill="#6ee7a8" font-size="44">0600</text><text x="220" y="330" fill="#f3f6fa" font-size="22">vault.cvlt</text><text x="66" y="420" fill="#ffb347" font-size="21">OWNER ONLY · SELF-HEALING · NO PLAINTEXT</text></g>
+</svg>
