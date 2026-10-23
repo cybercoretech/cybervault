@@ -11,6 +11,16 @@
   <meta property="og:image" content="assets/brand/neon/cybervault-lockbox.png">
   <link rel="icon" type="image/svg+xml" href="assets/brand/neon/cybervault-favicon.svg">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    window.SITE = {
+      defaultTheme: "cybervault-secure-node",
+      mashups: [
+        { id: "cybervault-secure-node", label: "SECURE NODE", base: "cyberdyne-infiltrator", accent: "cyberpunk-overdrive" },
+        { id: "cybervault-black-ice", label: "BLACK ICE", base: "dystopian-quarantine", accent: "neosynth-wave" },
+        { id: "cybervault-red-team", label: "RED TEAM", base: "cyberpunk-overdrive", accent: "synthwave-cruise" }
+      ]
+    };
+  </script>
 </head>
 <body>
   <div class="companion-banner">
@@ -29,6 +39,11 @@
         <a href="#threat">Threat model</a>
         <a href="#install">Install</a>
         <a class="btn btn-ghost" href="https://github.com/cybercoretech/cybervault" target="_blank" rel="noopener">GitHub ↗</a>
+        <div class="theme-picker">
+          <span class="theme-label">THEME</span>
+          <button id="themeButton" class="theme-button" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="themeMenu">LOADING THEMES...</button>
+          <div id="themeMenu" class="theme-menu" role="listbox" aria-label="Theme" hidden></div>
+        </div>
       </div>
     </div>
   </nav>
