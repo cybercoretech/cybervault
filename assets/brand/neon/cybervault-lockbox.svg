@@ -1,32 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
-  <title id="title">CyberVault hardened lockbox</title>
-  <desc id="desc">A neon cyan and magenta lockbox enclosed by a security grid.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">CyberVault hardened vault door</title>
+  <desc id="desc">A dimensional steel vault door with neon circuit traces, locking rings, bolts, and a protected key core.</desc>
   <defs>
-    <linearGradient id="edge" x1="0" x2="1" y1="0" y2="1">
-      <stop stop-color="#2ee6f6"/>
-      <stop offset=".52" stop-color="#9b6bff"/>
-      <stop offset="1" stop-color="#ff2e97"/>
-    </linearGradient>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#2ee6f6" stroke-opacity=".16"/>
-    </pattern>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#263443"/><stop offset=".35" stop-color="#0d141d"/><stop offset=".7" stop-color="#1c2a38"/><stop offset="1" stop-color="#070b11"/></linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2ee6f6"/><stop offset=".43" stop-color="#9b6bff"/><stop offset="1" stop-color="#ff2e97"/></linearGradient>
+    <radialGradient id="core"><stop stop-color="#6ee7a8" stop-opacity=".9"/><stop offset=".35" stop-color="#2ee6f6" stop-opacity=".35"/><stop offset="1" stop-color="#07090e" stop-opacity="0"/></radialGradient>
+    <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="11" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="26"/></filter>
+    <pattern id="mesh" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#2ee6f6" stroke-opacity=".13"/></pattern>
   </defs>
-  <rect width="800" height="800" fill="#07090e"/>
-  <circle cx="400" cy="370" r="300" fill="url(#grid)" opacity=".65"/>
-  <circle cx="400" cy="370" r="250" fill="none" stroke="#2ee6f6" stroke-dasharray="2 18" stroke-width="2" opacity=".55"/>
-  <circle cx="400" cy="370" r="205" fill="none" stroke="#ff2e97" stroke-dasharray="70 28" stroke-width="2" opacity=".45"/>
-  <g filter="url(#glow)">
-    <path d="M180 220h330l110 110v300H180z" fill="#111821" stroke="url(#edge)" stroke-width="8"/>
-    <path d="M510 220v110h110" fill="none" stroke="#2ee6f6" stroke-width="6"/>
-    <path d="M220 390h360M220 440h360M220 490h230" stroke="#3a4656" stroke-width="8"/>
-    <circle cx="400" cy="590" r="78" fill="#111821" stroke="#6ee7a8" stroke-width="8"/>
-    <rect x="370" y="580" width="60" height="56" rx="8" fill="#07090e" stroke="#6ee7a8" stroke-width="6"/>
-    <path d="M382 580v-24a18 18 0 0 1 36 0v24" fill="none" stroke="#6ee7a8" stroke-width="6"/>
+  <rect width="900" height="900" fill="#07090e"/>
+  <ellipse cx="460" cy="450" rx="335" ry="350" fill="#2ee6f6" opacity=".08" filter="url(#soft)"/>
+  <path d="M150 158 690 100 780 170v530L690 800l-540-56z" fill="#0a1018" stroke="#3a4656" stroke-width="4"/>
+  <path d="M188 180 662 130l74 58v464l-74 83-474-48z" fill="url(#steel)" stroke="url(#rim)" stroke-width="7"/>
+  <path d="M188 180 662 130l74 58M188 180v507M662 130v605" fill="none" stroke="#e9f1f7" stroke-opacity=".18" stroke-width="3"/>
+  <path d="M208 204 646 158l66 48v418l-66 72-438-45z" fill="url(#mesh)" opacity=".8"/>
+  <g filter="url(#bloom)" fill="#ffb347" stroke="#07090e" stroke-width="4">
+    <circle cx="236" cy="236" r="12"/><circle cx="682" cy="192" r="12"/><circle cx="236" cy="652" r="12"/><circle cx="682" cy="622" r="12"/>
   </g>
-  <path d="M92 690h150M558 690h150" stroke="#2ee6f6" stroke-width="3"/>
-  <circle cx="72" cy="690" r="6" fill="#ffb347"/><circle cx="728" cy="690" r="6" fill="#ff2e97"/>
+  <g transform="translate(445 430)" filter="url(#bloom)">
+    <circle r="218" fill="#07090e" fill-opacity=".82" stroke="#2ee6f6" stroke-width="8"/>
+    <circle r="188" fill="none" stroke="#3a4656" stroke-width="18"/>
+    <circle r="188" fill="none" stroke="url(#rim)" stroke-width="5" stroke-dasharray="92 22 12 18"/>
+    <circle r="146" fill="none" stroke="#2ee6f6" stroke-opacity=".55" stroke-width="3" stroke-dasharray="3 17"/>
+    <circle r="115" fill="url(#core)" opacity=".8"/>
+    <circle r="92" fill="#101a24" stroke="#6ee7a8" stroke-width="7"/>
+    <path d="M-30 10h60v58h-60z" fill="#07090e" stroke="#6ee7a8" stroke-width="6"/>
+    <path d="M-16 10v-30a36 36 0 0 1 72 0v30" fill="none" stroke="#6ee7a8" stroke-width="7"/>
+    <circle cy="37" r="8" fill="#6ee7a8"/>
+    <path d="M0 45v16" stroke="#6ee7a8" stroke-width="5"/>
+  </g>
+  <g fill="none" stroke="#2ee6f6" stroke-width="3" opacity=".85">
+    <path d="M210 320h74l38-38"/><path d="M654 310h-65l-42-42"/><path d="M208 545h72l42 42"/><path d="M674 540h-72l-35 35"/>
+  </g>
+  <g font-family="monospace" font-size="13" letter-spacing="3" fill="#8a98a8">
+    <text x="92" y="82">CVLT / SECURE NODE 01</text><text x="650" y="842">AUTH // LOCKED</text>
+  </g>
 </svg>

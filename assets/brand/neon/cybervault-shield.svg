@@ -1,14 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title">
-  <title id="title">CyberVault encrypted shield</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-labelledby="title desc">
+  <title id="title">CyberVault layered encryption shield</title>
+  <desc id="desc">A layered translucent security shield with a protected lock core and encrypted signal paths.</desc>
   <defs>
-    <linearGradient id="shield" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#2ee6f6"/><stop offset=".55" stop-color="#9b6bff"/><stop offset="1" stop-color="#ff2e97"/></linearGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2ee6f6" stop-opacity=".3"/><stop offset=".5" stop-color="#111821" stop-opacity=".95"/><stop offset="1" stop-color="#ff2e97" stop-opacity=".35"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
-  <rect width="640" height="640" fill="#07090e"/>
-  <path d="M320 62 520 136v154c0 137-83 232-200 288-117-56-200-151-200-288V136z" fill="#111821" stroke="url(#shield)" stroke-width="10" filter="url(#glow)"/>
-  <path d="M320 132v350M184 308h272" stroke="#2ee6f6" stroke-opacity=".3" stroke-width="3"/>
-  <circle cx="320" cy="308" r="88" fill="#07090e" stroke="#6ee7a8" stroke-width="8"/>
-  <rect x="285" y="300" width="70" height="64" rx="8" fill="#111821" stroke="#6ee7a8" stroke-width="6"/>
-  <path d="M299 300v-28a21 21 0 0 1 42 0v28" fill="none" stroke="#6ee7a8" stroke-width="6"/>
-  <path d="M150 540h340" stroke="#3a4656" stroke-width="3" stroke-dasharray="4 14"/>
+  <rect width="700" height="700" fill="#07090e"/>
+  <path d="M350 55 585 143v180c0 156-99 259-235 322C214 582 115 479 115 323V143z" fill="#2ee6f6" opacity=".06" filter="url(#glow)"/>
+  <path d="M350 55 585 143v180c0 156-99 259-235 322C214 582 115 479 115 323V143z" fill="url(#glass)" stroke="#2ee6f6" stroke-width="7"/>
+  <path d="M350 104 535 174v145c0 121-71 205-185 264-114-59-185-143-185-264V174z" fill="none" stroke="#9b6bff" stroke-width="4" stroke-dasharray="16 10"/>
+  <path d="M350 105v478M164 315h372" stroke="#2ee6f6" stroke-opacity=".35" stroke-width="3"/>
+  <g fill="#ff2e97" filter="url(#glow)"><circle cx="175" cy="174" r="7"/><circle cx="525" cy="174" r="7"/><circle cx="350" cy="580" r="7"/></g>
+  <circle cx="350" cy="315" r="105" fill="#07090e" stroke="#6ee7a8" stroke-width="8"/>
+  <circle cx="350" cy="315" r="82" fill="none" stroke="#3a4656" stroke-width="12"/>
+  <rect x="314" y="307" width="72" height="68" rx="9" fill="#111821" stroke="#6ee7a8" stroke-width="6"/>
+  <path d="M328 307v-30a22 22 0 0 1 44 0v30" fill="none" stroke="#6ee7a8" stroke-width="6"/>
+  <text x="350" y="650" fill="#8a98a8" font-family="monospace" font-size="15" letter-spacing="4" text-anchor="middle">ARGON2ID / AEAD / SEALED</text>
 </svg>

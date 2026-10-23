@@ -1,9 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title">
-  <title id="title">CyberVault authenticated data envelope</title>
-  <defs><linearGradient id="e" x1="0" x2="1"><stop stop-color="#2ee6f6"/><stop offset="1" stop-color="#ff2e97"/></linearGradient></defs>
-  <rect width="640" height="480" fill="#07090e"/>
-  <rect x="76" y="92" width="488" height="296" rx="4" fill="#111821" stroke="url(#e)" stroke-width="7"/>
-  <path d="m82 112 238 190 238-190M82 368l168-150M558 368 390 218" fill="none" stroke="#2ee6f6" stroke-width="5"/>
-  <circle cx="320" cy="240" r="52" fill="#07090e" stroke="#6ee7a8" stroke-width="6"/>
-  <path d="m294 242 18 18 36-42" fill="none" stroke="#6ee7a8" stroke-width="9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" role="img" aria-labelledby="title desc">
+  <title id="title">CyberVault encrypted data capsule</title>
+  <desc id="desc">A dimensional encrypted data capsule with a green authentication seal and neon circuit rails.</desc>
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#263443"/><stop offset=".4" stop-color="#111821"/><stop offset="1" stop-color="#07090e"/></linearGradient>
+    <linearGradient id="rim" x1="0" x2="1"><stop stop-color="#2ee6f6"/><stop offset=".52" stop-color="#9b6bff"/><stop offset="1" stop-color="#ff2e97"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="700" height="520" fill="#07090e"/>
+  <path d="M90 128 154 76h392l64 52v266l-64 50H154l-64-50z" fill="#2ee6f6" opacity=".08" filter="url(#glow)"/>
+  <path d="M90 128 154 76h392l64 52v266l-64 50H154l-64-50z" fill="url(#body)" stroke="#3a4656" stroke-width="5"/>
+  <path d="M90 128h520M90 394h520M154 76v368M546 76v368" fill="none" stroke="url(#rim)" stroke-width="4"/>
+  <path d="M180 168h340M180 222h270M180 276h300M180 330h210" stroke="#536171" stroke-width="12" stroke-linecap="round"/>
+  <g filter="url(#glow)">
+    <circle cx="500" cy="270" r="62" fill="#07090e" stroke="#6ee7a8" stroke-width="7"/>
+    <path d="m470 272 20 20 40-48" fill="none" stroke="#6ee7a8" stroke-width="10"/>
+  </g>
+  <g fill="#2ee6f6"><circle cx="125" cy="165" r="5"/><circle cx="125" cy="350" r="5"/><circle cx="575" cy="165" r="5"/><circle cx="575" cy="350" r="5"/></g>
+  <text x="350" y="475" fill="#8a98a8" font-family="monospace" font-size="14" letter-spacing="3" text-anchor="middle">SALT / NONCE / AUTHENTICATED CIPHERTEXT</text>
 </svg>

@@ -1,12 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-labelledby="title">
-  <title id="title">CyberVault threat boundary diagram</title>
-  <defs><pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#3a4656" stroke-opacity=".55"/></pattern></defs>
-  <rect width="900" height="500" fill="#07090e"/><rect width="900" height="500" fill="url(#g)"/>
-  <rect x="176" y="100" width="548" height="300" rx="4" fill="#111821" stroke="#2ee6f6" stroke-width="4"/>
-  <rect x="214" y="138" width="472" height="224" rx="2" fill="none" stroke="#6ee7a8" stroke-width="3" stroke-dasharray="12 10"/>
-  <path d="M40 250h100M760 250h100" stroke="#ff2e97" stroke-width="5"/>
-  <path d="m118 232 22 18-22 18M782 232l-22 18 22 18" fill="none" stroke="#ff2e97" stroke-width="5"/>
-  <circle cx="450" cy="250" r="64" fill="#07090e" stroke="#9b6bff" stroke-width="7"/>
-  <path d="M450 205v90M405 250h90" stroke="#2ee6f6" stroke-width="3"/>
-  <text x="450" y="338" fill="#6ee7a8" font-family="monospace" font-size="19" text-anchor="middle">OWNER-ONLY BOUNDARY</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">CyberVault threat boundary</title>
+  <desc id="desc">A defended vault node with hostile red probes stopped at a cyan owner-only perimeter.</desc>
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#3a4656" stroke-opacity=".52"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="900" height="520" fill="#07090e"/><rect width="900" height="520" fill="url(#grid)"/>
+  <g stroke="#f1142d" stroke-width="5" fill="none" filter="url(#glow)">
+    <path d="M40 130h170l54 54"/><path d="M860 130H690l-54 54"/><path d="M40 390h170l54-54"/><path d="M860 390H690l-54-54"/>
+  </g>
+  <g fill="#f1142d"><path d="m240 174-30-4 16 25z"/><path d="m660 174 30-4-16 25z"/><path d="m240 346-30 4 16-25z"/><path d="m660 346 30 4-16-25z"/></g>
+  <rect x="208" y="82" width="484" height="356" rx="6" fill="#111821" stroke="#2ee6f6" stroke-width="6"/>
+  <rect x="232" y="106" width="436" height="308" rx="3" fill="none" stroke="#6ee7a8" stroke-width="3" stroke-dasharray="14 9"/>
+  <path d="M450 106v308M232 260h436" stroke="#2ee6f6" stroke-opacity=".2" stroke-width="3"/>
+  <circle cx="450" cy="260" r="80" fill="#07090e" stroke="#9b6bff" stroke-width="7"/>
+  <path d="M410 252h80v66h-80zM426 252v-28a24 24 0 0 1 48 0v28" fill="none" stroke="#6ee7a8" stroke-width="7"/>
+  <circle cx="450" cy="283" r="9" fill="#6ee7a8"/>
+  <text x="450" y="473" fill="#6ee7a8" font-family="monospace" font-size="16" letter-spacing="3" text-anchor="middle">OWNER-ONLY / THREAT BOUNDARY HOLDS</text>
 </svg>
