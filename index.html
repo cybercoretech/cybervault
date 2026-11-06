@@ -21,6 +21,9 @@
       ]
     };
   </script>
+  <link rel="stylesheet" href="https://cybercoretech.github.io/kit/chooser.css">
+  <script>window.SITE = Object.assign(window.SITE || {}, {"themeVars": {"bg": "--void", "white": "--text", "panel": "--surface", "acid_green": "--green"}});</script>
+  <script type="module" src="https://cybercoretech.github.io/kit/chooser.js"></script>
 </head>
 <body>
   <div class="companion-banner">
@@ -41,8 +44,7 @@
     <a href="https://cybercoretech.github.io/cybercore/docs.html">MASTER DOCS ↗</a></nav>
     <div class="theme-picker">
       <span class="theme-label">THEME</span>
-      <button id="themeButton" class="theme-button" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="themeMenu">LOADING THEMES...</button>
-      <div id="themeMenu" class="theme-menu" role="listbox" aria-label="Theme" hidden></div>
+      <cybercore-theme-chooser adopt><button id="themeButton" class="theme-button" type="button">Secure Node</button></cybercore-theme-chooser>
     </div>
   </header>
 
@@ -177,7 +179,7 @@
       <div class="foot-family">Cybercore family</div>
     </div>
   </footer>
-  <script src="app.js?v=40e5f02"></script>
+  <script src="app.js?v=universal-chooser-1"></script>
   <script type="module" src="https://cybercoretech.github.io/kit/contact.js"></script>
 </body>
 </html>
