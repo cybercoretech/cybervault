@@ -24,6 +24,53 @@
   <link rel="stylesheet" href="https://cybercoretech.github.io/kit/chooser.css">
   <script>window.SITE = Object.assign(window.SITE || {}, {"themeVars": {"bg": "--void", "white": "--text", "panel": "--surface", "acid_green": "--green"}});</script>
   <script type="module" src="https://cybercoretech.github.io/kit/chooser.js"></script>
+  <style id="cc-mobile-first">
+/* Mobile floor (phones + tablets): readable text and finger-sized targets.
+   Generated per range from what renders under 11px / 24px; desktop untouched. */
+@media (max-width: 600px) {
+  small,
+  nav.main-nav > a,
+  span.pill,
+  span.metric-label,
+  span.status,
+  p.status,
+  div.foot-family { font-size: 11px !important; }
+}
+@media (min-width: 601px) and (max-width: 860px) {
+  small,
+  nav.main-nav > a,
+  span.theme-label,
+  span.pill,
+  span.metric-label,
+  span.status,
+  p.status,
+  div.foot-family { font-size: 11px !important; }
+}
+@media (min-width: 861px) and (max-width: 1024px) {
+  small,
+  nav.main-nav > a,
+  span.theme-label,
+  span.pill,
+  span.metric-label,
+  span.status,
+  p.status,
+  div.foot-family { font-size: 11px !important; }
+}
+@media (pointer: coarse) {
+  nav.main-nav > a,
+  div.foot-links > a { min-height: 24px; min-width: 24px; }
+  div.companion-banner > a { display: inline-flex; align-items: center; min-height: 24px; min-width: 24px; }
+}
+/* Layout fixes: phones and tablets only; laptops and desktops untouched. */
+@media (max-width: 1024px) {
+  /* Mobile first: nothing may make the page wider than the screen.
+     Grid/flex columns may shrink below their widest line; code scrolls in place. */
+  pre { max-width: 100%; overflow-x: auto; }
+  img, video { max-width: 100%; height: auto; }
+  /* Long paths and URLs in inline code may break anywhere instead of widening the page. */
+  :not(pre) > code { overflow-wrap: anywhere; }
+}
+  </style>
 </head>
 <body>
   <div class="companion-banner">
